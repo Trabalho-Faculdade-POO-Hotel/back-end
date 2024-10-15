@@ -1,10 +1,12 @@
 package src.models;
 
+import src.models.OperacaoReserva;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Cliente implements OperacaoReserva{
+public class Cliente implements OperacaoReserva {
     private String nome;
     private String cpf;
     private String email;
@@ -12,6 +14,7 @@ public class Cliente implements OperacaoReserva{
     private String telefone;
     private String endereco;
     private List<String> observacoes;
+
 
     Cliente(){}
 
@@ -80,12 +83,12 @@ public class Cliente implements OperacaoReserva{
         return historico;
     }
 
-    @Override
-    public void fazerReserva(Object reserva) {
+    public void cancelarReserva(){
 
     }
 
-    public void cancelarReserva(){
+    @Override
+    public void fazerReserva(Object obj) {
 
     }
 
@@ -94,13 +97,24 @@ public class Cliente implements OperacaoReserva{
         return List.of();
     }
 
-    public void atualizarDados(){
-
+    public void atualizarDados(String nome, String email, String telefone, String endereco, Date dt_nascimento, List<String> observacoes) {
+        if (nome != null && !nome.isEmpty()) {
+            this.nome = nome;
+        }
+        if (email != null && !email.isEmpty()) {
+            this.email = email;
+        }
+        if (telefone != null && !telefone.isEmpty()) {
+            this.telefone = telefone;
+        }
+        if (endereco != null && !endereco.isEmpty()) {
+            this.endereco = endereco;
+        }
+        if (dt_nascimento != null) {
+            this.dt_nascimento = dt_nascimento;
+        }
+        if (observacoes != null) {
+            this.observacoes = observacoes;
+        }
     }
-
-
-
-
-
-
 }
