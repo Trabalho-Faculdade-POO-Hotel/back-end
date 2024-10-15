@@ -1,10 +1,10 @@
-package org.example;
+package src.models;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Cliente implements operacaoReserva{
+public class Cliente implements OperacaoReserva{
     private String nome;
     private String cpf;
     private String email;
@@ -81,7 +81,7 @@ public class Cliente implements operacaoReserva{
     }
 
     @Override
-    public void fazerReserva() {
+    public void fazerReserva(Object reserva) {
 
     }
 
