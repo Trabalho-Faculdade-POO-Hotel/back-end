@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class JsonServlet extends HttpServlet {
 
     private void configureHeaders(HttpServletResponse resp) {
-        resp.setContentType("application/json");
+        resp.setContentType("application/json; charset=UTF-8");
         resp.setCharacterEncoding("UTF-8");
     }
 
