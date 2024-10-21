@@ -1,0 +1,1 @@
+deploy/maven/bin/mvn clean package

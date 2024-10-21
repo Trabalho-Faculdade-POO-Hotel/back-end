@@ -1,0 +1,863 @@
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:20:17.161 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:20:17.165 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:20:17.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:20:17.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96
+20-Oct-2024 13:20:17.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96
+20-Oct-2024 13:20:17.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/conf/logging.properties
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:20:17.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96
+20-Oct-2024 13:20:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/temp
+20-Oct-2024 13:20:17.196 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:20:17.196 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:20:17.196 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:20:17.197 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:20:17.202 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:20:17.581 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:20:17.611 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [687] milliseconds
+20-Oct-2024 13:20:17.659 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:20:17.659 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:20:17.669 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/examples]
+20-Oct-2024 13:20:18.223 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/examples] has finished in [555] ms
+20-Oct-2024 13:20:18.224 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/docs]
+20-Oct-2024 13:20:18.270 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/docs] has finished in [45] ms
+20-Oct-2024 13:20:18.270 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/ROOT]
+20-Oct-2024 13:20:18.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/ROOT] has finished in [20] ms
+20-Oct-2024 13:20:18.291 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/host-manager]
+20-Oct-2024 13:20:18.319 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/host-manager] has finished in [28] ms
+20-Oct-2024 13:20:18.319 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/manager]
+20-Oct-2024 13:20:18.344 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/tomcat/apache-tomcat-9.0.96/webapps/manager] has finished in [25] ms
+20-Oct-2024 13:20:18.349 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:20:18.361 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [748] milliseconds
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:36:09.148 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:36:09.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:36:09.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:36:09.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:36:09.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:36:09.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:36:09.176 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:36:09.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:36:09.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:36:09.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:36:09.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:36:09.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:36:09.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:36:09.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:36:09.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:36:09.179 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:36:09.179 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:36:09.179 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:36:09.179 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:36:09.179 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:36:09.185 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:36:09.185 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:36:09.185 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:36:09.185 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:36:09.191 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:36:09.576 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:36:09.613 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [689] milliseconds
+20-Oct-2024 13:36:09.663 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:36:09.663 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:36:09.685 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:36:10.324 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [638] ms
+20-Oct-2024 13:36:10.327 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:36:10.765 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [438] ms
+20-Oct-2024 13:36:10.765 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:36:10.820 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [54] ms
+20-Oct-2024 13:36:10.820 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT]
+20-Oct-2024 13:36:10.878 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] has finished in [57] ms
+20-Oct-2024 13:36:10.879 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:36:10.948 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [68] ms
+20-Oct-2024 13:36:10.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:36:11.002 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [52] ms
+20-Oct-2024 13:36:11.013 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:36:11.040 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1427] milliseconds
+20-Oct-2024 13:39:51.062 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ProjetoPOO]
+20-Oct-2024 13:39:51.086 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:39:51.129 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [43] ms
+20-Oct-2024 13:41:31.148 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ProjetoPOO]
+20-Oct-2024 13:41:31.156 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:41:31.192 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [35] ms
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:42:13.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:42:13.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:42:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:42:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:42:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:42:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:42:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:42:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:42:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:42:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:42:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:42:13.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:42:13.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:42:13.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:42:13.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:42:13.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:42:13.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:42:13.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:42:13.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:42:13.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:42:13.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:42:13.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:42:13.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:42:13.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:42:13.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:42:13.044 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:42:13.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:42:13.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:42:13.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:42:13.053 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:42:13.531 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:42:13.566 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [787] milliseconds
+20-Oct-2024 13:42:13.662 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:42:13.662 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:42:13.694 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:42:14.257 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [562] ms
+20-Oct-2024 13:42:14.259 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:42:14.800 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [540] ms
+20-Oct-2024 13:42:14.800 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:42:14.839 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [39] ms
+20-Oct-2024 13:42:14.840 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT]
+20-Oct-2024 13:42:14.879 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] has finished in [40] ms
+20-Oct-2024 13:42:14.880 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:42:14.937 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [57] ms
+20-Oct-2024 13:42:14.938 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:42:14.993 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [54] ms
+20-Oct-2024 13:42:15.000 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:42:15.015 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1448] milliseconds
+20-Oct-2024 13:44:31.733 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:44:31.734 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:31.737 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:44:31.776 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:31.786 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:44:44.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:44:44.162 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:44:44.162 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:44:44.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:44:44.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:44:44.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:44:44.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:44:44.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:44:44.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:44:44.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:44:44.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:44:44.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:44:44.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:44:44.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:44:44.185 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:44:44.185 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:44:44.185 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:44:44.185 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:44:44.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:44:44.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:44:44.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:44:44.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:44:44.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:44:44.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:44:44.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:44:44.192 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:44:44.193 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:44:44.193 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:44:44.193 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:44:44.201 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:44:44.828 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:44.896 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [963] milliseconds
+20-Oct-2024 13:44:45.004 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:44:45.004 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:44:45.035 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:44:45.421 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [385] ms
+20-Oct-2024 13:44:45.422 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:44:45.744 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [321] ms
+20-Oct-2024 13:44:45.745 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:44:45.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [52] ms
+20-Oct-2024 13:44:45.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT]
+20-Oct-2024 13:44:45.832 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] has finished in [33] ms
+20-Oct-2024 13:44:45.832 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:44:45.892 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [60] ms
+20-Oct-2024 13:44:45.893 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:44:45.943 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [50] ms
+20-Oct-2024 13:44:45.954 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:45.983 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1086] milliseconds
+20-Oct-2024 13:44:51.910 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:44:51.912 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:51.915 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:44:51.955 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:44:51.963 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:45:34.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:45:34.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:45:34.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:45:34.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:45:34.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:34.555 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:34.570 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:45:34.570 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:45:34.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:45:34.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:45:34.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:45:34.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:45:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:45:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:45:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:45:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:45:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:45:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:45:34.580 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:45:34.581 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:45:34.581 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:45:34.581 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:45:34.589 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:45:35.308 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:35.370 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1060] milliseconds
+20-Oct-2024 13:45:35.446 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:45:35.447 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:45:35.480 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:45:35.534 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 13:45:36.005 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [525] ms
+20-Oct-2024 13:45:36.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:45:36.385 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [380] ms
+20-Oct-2024 13:45:36.385 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:45:36.411 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [26] ms
+20-Oct-2024 13:45:36.412 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT]
+20-Oct-2024 13:45:36.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] has finished in [22] ms
+20-Oct-2024 13:45:36.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:45:36.463 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [29] ms
+20-Oct-2024 13:45:36.464 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:45:36.501 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [36] ms
+20-Oct-2024 13:45:36.507 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:36.522 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1151] milliseconds
+20-Oct-2024 13:45:46.984 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:45:46.985 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:46.991 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:45:47.039 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:47.049 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:47.582 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:45:47.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:45:47.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:45:47.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:45:47.588 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:45:47.588 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:45:47.588 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:45:47.588 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:45:47.588 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:45:47.589 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:47.589 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:47.602 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:45:47.602 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:45:47.602 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:45:47.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:45:47.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:45:47.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:45:47.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:45:47.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:45:47.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:45:47.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:45:47.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:45:47.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:47.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:45:47.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:45:47.610 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:45:47.611 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:45:47.611 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:45:47.611 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:45:47.617 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:45:48.315 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:48.368 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1014] milliseconds
+20-Oct-2024 13:45:48.456 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:45:48.456 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:45:48.497 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:45:48.540 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 13:45:48.953 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [457] ms
+20-Oct-2024 13:45:48.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:45:49.221 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [266] ms
+20-Oct-2024 13:45:49.221 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:45:49.255 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [34] ms
+20-Oct-2024 13:45:49.256 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT]
+20-Oct-2024 13:45:49.289 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] has finished in [33] ms
+20-Oct-2024 13:45:49.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:45:49.324 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [34] ms
+20-Oct-2024 13:45:49.325 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:45:49.351 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [25] ms
+20-Oct-2024 13:45:49.357 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:45:49.370 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1001] milliseconds
+20-Oct-2024 13:46:51.719 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:46:51.720 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:46:51.724 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:46:51.762 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:46:51.776 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:46:52.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:46:52.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:46:52.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:46:52.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:46:52.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:46:52.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:46:52.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:46:52.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:46:52.346 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:46:52.346 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:46:52.346 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:46:52.357 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:46:52.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:46:52.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:46:52.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:46:52.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:46:52.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:46:52.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:46:52.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:46:52.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:46:52.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:46:52.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:46:52.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:46:52.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:46:52.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:46:52.365 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:46:52.366 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:46:52.366 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:46:52.366 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:46:52.372 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:46:52.789 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:46:52.819 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [728] milliseconds
+20-Oct-2024 13:46:52.867 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:46:52.868 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:46:52.886 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:46:53.261 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [374] ms
+20-Oct-2024 13:46:53.265 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:46:53.421 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [156] ms
+20-Oct-2024 13:46:53.424 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:46:54.115 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [692] ms
+20-Oct-2024 13:46:54.116 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:46:54.165 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [48] ms
+20-Oct-2024 13:46:54.165 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:46:54.222 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [57] ms
+20-Oct-2024 13:46:54.223 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:46:54.281 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [57] ms
+20-Oct-2024 13:46:54.290 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:46:54.314 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1494] milliseconds
+20-Oct-2024 13:47:32.775 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:47:32.777 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:47:32.780 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:47:32.827 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:47:32.838 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:47:33.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:47:33.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:47:33.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:47:33.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:47:33.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:47:33.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:47:33.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:47:33.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:47:33.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:47:33.415 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:47:33.415 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:47:33.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:47:33.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:47:33.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:47:33.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:47:33.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:47:33.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:47:33.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:47:33.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:47:33.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:47:33.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:47:33.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:47:33.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:47:33.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:47:33.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:47:33.436 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:47:33.436 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:47:33.436 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:47:33.437 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:47:33.444 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:47:34.184 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:47:34.241 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1061] milliseconds
+20-Oct-2024 13:47:34.343 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:47:34.344 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:47:34.371 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:47:34.863 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [491] ms
+20-Oct-2024 13:47:34.865 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:47:34.921 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [57] ms
+20-Oct-2024 13:47:34.922 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:47:35.271 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [349] ms
+20-Oct-2024 13:47:35.272 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:47:35.305 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [34] ms
+20-Oct-2024 13:47:35.306 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:47:35.346 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [40] ms
+20-Oct-2024 13:47:35.346 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:47:35.384 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [37] ms
+20-Oct-2024 13:47:35.391 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:47:35.409 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1167] milliseconds
+20-Oct-2024 13:48:09.018 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:48:09.019 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:48:09.023 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:48:09.076 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:48:09.092 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:48:13.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:48:13.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:48:13.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:48:13.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:48:13.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:48:13.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:48:13.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:48:13.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:48:13.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:48:13.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:48:13.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:48:13.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:48:13.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:48:13.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:48:13.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:48:13.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:48:13.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:48:13.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:48:13.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:48:13.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:48:13.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:48:13.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:48:13.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:48:13.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:48:13.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:48:13.215 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:48:13.215 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:48:13.216 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:48:13.216 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:48:13.221 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:48:13.925 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:48:13.986 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1036] milliseconds
+20-Oct-2024 13:48:14.073 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:48:14.075 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:48:14.111 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:48:14.841 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [729] ms
+20-Oct-2024 13:48:14.843 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:48:14.969 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [126] ms
+20-Oct-2024 13:48:14.970 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:48:15.406 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [436] ms
+20-Oct-2024 13:48:15.406 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:48:15.428 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [22] ms
+20-Oct-2024 13:48:15.429 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:48:15.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [26] ms
+20-Oct-2024 13:48:15.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:48:15.488 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [31] ms
+20-Oct-2024 13:48:15.499 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:48:15.522 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1535] milliseconds
+20-Oct-2024 13:50:19.364 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:50:19.365 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:19.370 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:50:19.415 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:19.428 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:19.981 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:50:19.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:50:19.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:50:19.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:50:19.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:50:19.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:50:19.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:50:19.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:50:19.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:50:19.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:19.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:20.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:50:20.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:50:20.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:50:20.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:50:20.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:50:20.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:50:20.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:50:20.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:50:20.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:50:20.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:50:20.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:50:20.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:20.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:20.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:50:20.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:50:20.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:50:20.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:50:20.017 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:50:20.025 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:50:20.564 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:20.627 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [879] milliseconds
+20-Oct-2024 13:50:20.727 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:50:20.727 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:50:20.756 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:50:21.238 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [481] ms
+20-Oct-2024 13:50:21.241 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:50:21.246 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 13:50:21.320 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [79] ms
+20-Oct-2024 13:50:21.321 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:50:22.220 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [895] ms
+20-Oct-2024 13:50:22.225 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:50:22.327 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [105] ms
+20-Oct-2024 13:50:22.328 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:50:22.391 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [62] ms
+20-Oct-2024 13:50:22.392 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:50:22.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [65] ms
+20-Oct-2024 13:50:22.470 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:22.489 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1861] milliseconds
+20-Oct-2024 13:50:44.907 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:50:44.908 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:44.911 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:50:44.946 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:50:44.957 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:45.536 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:50:45.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:50:45.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:50:45.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:50:45.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:50:45.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:50:45.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:50:45.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:50:45.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:50:45.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:45.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:45.562 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:50:45.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:50:45.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:50:45.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:50:45.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:50:45.564 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:50:45.564 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:50:45.564 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:50:45.564 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:50:45.565 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:50:45.565 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:50:45.565 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:45.565 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:50:45.566 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:50:45.572 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:50:45.573 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:50:45.573 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:50:45.573 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:50:45.579 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:50:46.267 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:46.311 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1025] milliseconds
+20-Oct-2024 13:50:46.404 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:50:46.404 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:50:46.458 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOTTEST.war]
+20-Oct-2024 13:50:47.005 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOTTEST.war] has finished in [547] ms
+20-Oct-2024 13:50:47.007 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:50:47.040 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [33] ms
+20-Oct-2024 13:50:47.041 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:50:47.087 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [45] ms
+20-Oct-2024 13:50:47.088 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:50:47.467 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [378] ms
+20-Oct-2024 13:50:47.467 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:50:47.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [30] ms
+20-Oct-2024 13:50:47.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:50:47.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [37] ms
+20-Oct-2024 13:50:47.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:50:47.563 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [27] ms
+20-Oct-2024 13:50:47.569 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:50:47.582 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1270] milliseconds
+20-Oct-2024 13:51:03.101 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:51:03.102 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:51:03.106 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:51:03.161 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:51:03.174 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:51:03.838 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:51:03.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:51:03.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:51:03.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:51:03.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:51:03.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:51:03.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:51:03.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:51:03.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:51:03.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:51:03.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:51:03.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:51:03.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:51:03.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:51:03.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:51:03.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:51:03.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:51:03.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:51:03.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:51:03.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:51:03.868 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:51:03.868 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:51:03.868 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:51:03.868 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:51:03.876 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:51:04.549 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:51:04.602 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1028] milliseconds
+20-Oct-2024 13:51:04.699 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:51:04.700 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:51:04.725 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOTTEST.war]
+20-Oct-2024 13:51:05.310 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOTTEST.war] has finished in [584] ms
+20-Oct-2024 13:51:05.311 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:51:05.333 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [23] ms
+20-Oct-2024 13:51:05.334 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war]
+20-Oct-2024 13:51:05.362 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ProjetoPOO.war] has finished in [27] ms
+20-Oct-2024 13:51:05.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:51:05.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [405] ms
+20-Oct-2024 13:51:05.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:51:05.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [42] ms
+20-Oct-2024 13:51:05.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:51:05.852 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [41] ms
+20-Oct-2024 13:51:05.853 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:51:05.889 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [36] ms
+20-Oct-2024 13:51:05.896 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:51:05.915 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1312] milliseconds
+20-Oct-2024 13:54:45.946 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2024 13:54:45.963 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ROOTTEST]
+20-Oct-2024 13:54:45.970 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ProjetoPOO]
+20-Oct-2024 13:54:53.310 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:54:53.311 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:54:53.314 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:54:53.328 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:54:53.338 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:54:53.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:54:53.864 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:54:53.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:54:53.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:54:53.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:54:53.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:54:53.866 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:54:53.866 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:54:53.866 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:54:53.866 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:54:53.866 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:54:53.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:54:53.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:54:53.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:54:53.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:54:53.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:54:53.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:54:53.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:54:53.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:54:53.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:54:53.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:54:53.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:54:53.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:54:53.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:54:53.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:54:53.887 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:54:53.887 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:54:53.888 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:54:53.888 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:54:53.893 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:54:54.478 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:54:54.543 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [912] milliseconds
+20-Oct-2024 13:54:54.626 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:54:54.626 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:54:54.656 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:54:55.290 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [633] ms
+20-Oct-2024 13:54:55.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:54:55.817 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [527] ms
+20-Oct-2024 13:54:55.819 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:54:55.923 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [102] ms
+20-Oct-2024 13:54:55.925 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:54:56.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [171] ms
+20-Oct-2024 13:54:56.098 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:54:56.204 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [105] ms
+20-Oct-2024 13:54:56.217 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:54:56.254 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1709] milliseconds
+20-Oct-2024 13:55:22.505 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 13:55:22.507 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:55:22.510 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 13:55:22.547 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:55:22.558 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:55:23.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 13:55:23.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 13:55:23.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 13:55:23.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 13:55:23.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 13:55:23.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 13:55:23.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 13:55:23.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 13:55:23.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 13:55:23.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:55:23.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:55:23.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 13:55:23.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 13:55:23.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 13:55:23.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 13:55:23.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 13:55:23.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 13:55:23.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 13:55:23.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 13:55:23.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 13:55:23.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 13:55:23.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 13:55:23.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:55:23.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 13:55:23.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 13:55:23.216 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 13:55:23.217 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 13:55:23.217 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 13:55:23.217 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 13:55:23.226 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 13:55:23.921 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:55:23.975 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1052] milliseconds
+20-Oct-2024 13:55:24.057 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 13:55:24.058 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 13:55:24.089 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 13:55:24.130 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 13:55:24.573 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [485] ms
+20-Oct-2024 13:55:24.575 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 13:55:24.872 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [297] ms
+20-Oct-2024 13:55:24.872 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 13:55:24.903 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [31] ms
+20-Oct-2024 13:55:24.903 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 13:55:24.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [38] ms
+20-Oct-2024 13:55:24.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 13:55:24.976 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [35] ms
+20-Oct-2024 13:55:24.982 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 13:55:24.998 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1022] milliseconds
+20-Oct-2024 18:44:35.867 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 18:44:35.868 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:44:35.872 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 18:44:35.900 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:44:35.906 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 18:44:36.481 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 18:44:36.487 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 18:44:36.487 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 18:44:36.487 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 18:44:36.487 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 18:44:36.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 18:44:36.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 18:44:36.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 18:44:36.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 18:44:36.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:44:36.489 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:44:36.499 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 18:44:36.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 18:44:36.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 18:44:36.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 18:44:36.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 18:44:36.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 18:44:36.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 18:44:36.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 18:44:36.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 18:44:36.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 18:44:36.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 18:44:36.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:44:36.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:44:36.503 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 18:44:36.509 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 18:44:36.510 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 18:44:36.510 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 18:44:36.510 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 18:44:36.518 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 18:44:36.996 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:44:37.027 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [777] milliseconds
+20-Oct-2024 18:44:37.075 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 18:44:37.076 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 18:44:37.095 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 18:44:37.119 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 18:44:37.499 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [404] ms
+20-Oct-2024 18:44:37.500 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 18:44:37.803 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [303] ms
+20-Oct-2024 18:44:37.804 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 18:44:37.826 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [22] ms
+20-Oct-2024 18:44:37.827 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 18:44:37.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [35] ms
+20-Oct-2024 18:44:37.863 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 18:44:37.893 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [30] ms
+20-Oct-2024 18:44:37.898 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:44:37.912 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [884] milliseconds
+20-Oct-2024 18:45:36.979 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 18:45:36.979 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:45:36.982 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 18:45:37.014 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:45:37.028 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 18:47:03.984 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+20-Oct-2024 18:47:03.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+20-Oct-2024 18:47:03.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+20-Oct-2024 18:47:03.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2024 18:47:03.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-47-generic
+20-Oct-2024 18:47:03.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2024 18:47:03.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+20-Oct-2024 18:47:03.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.12+7-Ubuntu-1ubuntu222.04
+20-Oct-2024 18:47:03.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+20-Oct-2024 18:47:03.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:47:03.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:47:04.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Oct-2024 18:47:04.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+20-Oct-2024 18:47:04.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+20-Oct-2024 18:47:04.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Oct-2024 18:47:04.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Oct-2024 18:47:04.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/renatocorte/Documents/servlet-java/deploy/tomcat/conf/logging.properties
+20-Oct-2024 18:47:04.005 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2024 18:47:04.005 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2024 18:47:04.005 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2024 18:47:04.005 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Oct-2024 18:47:04.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Oct-2024 18:47:04.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:47:04.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/renatocorte/Documents/servlet-java/deploy/tomcat
+20-Oct-2024 18:47:04.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/renatocorte/Documents/servlet-java/deploy/tomcat/temp
+20-Oct-2024 18:47:04.012 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.31] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.3.0]
+20-Oct-2024 18:47:04.012 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+20-Oct-2024 18:47:04.012 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+20-Oct-2024 18:47:04.012 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+20-Oct-2024 18:47:04.018 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+20-Oct-2024 18:47:04.492 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:47:04.528 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [771] milliseconds
+20-Oct-2024 18:47:04.576 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Oct-2024 18:47:04.576 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+20-Oct-2024 18:47:04.600 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war]
+20-Oct-2024 18:47:04.630 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT] was found with a last modified time that did not match the associated WAR. It will be deleted.
+20-Oct-2024 18:47:05.040 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/ROOT.war] has finished in [439] ms
+20-Oct-2024 18:47:05.041 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples]
+20-Oct-2024 18:47:05.320 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/examples] has finished in [279] ms
+20-Oct-2024 18:47:05.321 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs]
+20-Oct-2024 18:47:05.343 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/docs] has finished in [21] ms
+20-Oct-2024 18:47:05.343 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager]
+20-Oct-2024 18:47:05.372 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/host-manager] has finished in [28] ms
+20-Oct-2024 18:47:05.372 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager]
+20-Oct-2024 18:47:05.400 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/renatocorte/Documents/servlet-java/deploy/tomcat/webapps/manager] has finished in [28] ms
+20-Oct-2024 18:47:05.406 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:47:05.419 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [890] milliseconds
+20-Oct-2024 18:47:08.611 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2024 18:47:08.612 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:47:08.615 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Oct-2024 18:47:08.640 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Oct-2024 18:47:08.651 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
