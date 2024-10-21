@@ -14,6 +14,7 @@ public class JsonServlet extends HttpServlet {
 
     private void configureHeaders(HttpServletResponse resp) {
         resp.setContentType("application/json");
+        resp.setCharacterEncoding("UTF-8");
     }
 
     @Override
