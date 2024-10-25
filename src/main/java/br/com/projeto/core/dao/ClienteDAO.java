@@ -20,5 +20,5 @@ public interface ClienteDAO extends Reservavel<Reserva> {
     public void cancelarReserva();
 
     void atualizarDadosCadastro(Cliente cliente, String nome, String email,
-                                String telefone, String endereco, Date dt_nascimento0);
+            String telefone, String endereco, Date dtNascimento);
 }

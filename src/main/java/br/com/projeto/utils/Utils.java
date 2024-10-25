@@ -5,7 +5,11 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class Utils {
+    private static ObjectMapper mapper = new ObjectMapper();
 
     public static Properties getProperties(String propertiesFile) {
         Properties properties = new Properties();
@@ -19,6 +23,10 @@ public class Utils {
         }
 
         return properties;
+    }
+
+    public static String convertObjectToJson(Object obj) throws JsonProcessingException {
+        return Utils.mapper.writeValueAsString(obj);
     }
 
     public static void sendJsonResponse(String json, HttpServletResponse response) throws IOException {

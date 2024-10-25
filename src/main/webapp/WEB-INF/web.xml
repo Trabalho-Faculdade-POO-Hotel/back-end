@@ -14,12 +14,12 @@
     </filter>
     
     <servlet>
-        <servlet-name>HotelServlet</servlet-name>
-        <servlet-class>br.com.projeto.app.servlet.HotelServlet</servlet-class>
+        <servlet-name>Router</servlet-name>
+        <servlet-class>br.com.projeto.app.servlet.Router</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HotelServlet</servlet-name>
-        <url-pattern>/hotel/*</url-pattern>
+        <servlet-name>Router</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
 

@@ -1,9 +1,20 @@
+package br.com.projeto.app.impl;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuartoDAOImpl implements QuartoDAO {
-    private List<Quarto> quartos = new ArrayList<>();
+import br.com.projeto.core.dao.QuartoDAO;
+import br.com.projeto.core.entity.Quarto;
 
+public class QuartoDAOImpl implements QuartoDAO {
+    private static List<Quarto> quartos = new ArrayList<>();
+
+    private QuartoDAOImpl() {}
+
+    @Override
+    public void adicionar(Quarto quarto) {
+        quartos.add(quarto);
+    }
 
     @Override
     public Quarto buscarPorNumero(int numero) {
@@ -20,30 +31,22 @@ public class QuartoDAOImpl implements QuartoDAO {
         return new ArrayList<>(quartos);
     }
 
-
     @Override
-    public void atualizarPreco(int numero, double novoPreco) {
-        Quarto quarto = buscarPorNumero(numero);
-        if (quarto != null) {
-            quarto.setPreco(novoPreco);
+    public void atualizar(Quarto quarto) {
+        Quarto q = buscarPorNumero(quarto.getNumero());
+        if (q != null) {
+            q.setTipoQuarto(quarto.getTipoQuarto());
+            q.setLotacaoQuarto(quarto.getLotacaoQuarto());
+            q.setPreco(quarto.getPreco());
+            q.setStatusManutencao(quarto.isStatusManutencao());
         }
     }
 
     @Override
-    public Quarto alterarTipoQuarto(int numero, Quarto.TipoQuarto novoTipo) {
+    public void remover(int numero) {
         Quarto quarto = buscarPorNumero(numero);
         if (quarto != null) {
-            quarto.setTipoQuarto(novoTipo);
-            return quarto;
-        }
-        return null; // ou lançar uma exceção
-    }
-
-    @Override
-    public void alterarStatusManutencao(int numero, boolean novoStatus) {
-        Quarto quarto = buscarPorNumero(numero);
-        if (quarto != null) {
-            quarto.setStatusManutencao(novoStatus);
+            quartos.remove(quarto);
         }
     }
 }

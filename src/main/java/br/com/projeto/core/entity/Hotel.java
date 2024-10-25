@@ -6,7 +6,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder(toBuilder = true)
 public class Hotel {
-    private int id;
+    private int hotelId;
     private String nome;
     private String endereco;
 }
