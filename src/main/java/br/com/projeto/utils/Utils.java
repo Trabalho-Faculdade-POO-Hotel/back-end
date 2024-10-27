@@ -25,6 +25,10 @@ public class Utils {
         return properties;
     }
 
+    public static String createErrorJsonPayload(String message) {
+        return String.format("{ \"error\": \"%s\" }", message);
+    }
+
     public static String convertObjectToJson(Object obj) throws JsonProcessingException {
         return Utils.mapper.writeValueAsString(obj);
     }
