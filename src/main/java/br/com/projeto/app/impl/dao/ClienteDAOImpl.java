@@ -1,8 +1,8 @@
 package br.com.projeto.app.impl.dao;
 
 import java.sql.Connection;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.entity.Cliente;
@@ -14,7 +14,7 @@ public class ClienteDAOImpl extends DAO<Cliente, Connection> {
     }
 
     @Override
-    public List<Cliente> get(HashMap<String, Object> filter) {
+    public List<Cliente> get(List<FilterEntry> filter) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get'");
     }

@@ -6,16 +6,37 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder(toBuilder = true)
 public class Quarto {
-    private int numero;
-    private TipoQuarto tipoQuarto;
-    private int lotacaoQuarto;
-    private double preco;
-    private boolean statusManutencao;
+    private Integer quartoId;
+    private Integer numero;
+    private TipoQuarto tipo;
+    private Integer lotacao;
+    private Double preco;
+    private Boolean emManutencao;
+    private Integer hotelId;
 
     public enum TipoQuarto {
         SUITE,
         QUARTO_INDIVIDUAL,
         QUARTO_FAMILIAR,
-        QUARTO_EXECUTIVO,
+        QUARTO_EXECUTIVO;
+
+        public static TipoQuarto fromString(String value) {
+            switch (value) {
+                case "SUITE":
+                    return SUITE;
+
+                case "QUARTO_INDIVIDUAL":
+                    return QUARTO_INDIVIDUAL;
+
+                case "QUARTO_FAMILIAR":
+                    return QUARTO_FAMILIAR;
+
+                case "QUARTO_EXECUTIVO":
+                    return QUARTO_EXECUTIVO;
+
+                default:
+                    return null;
+            }
+        }
     }
 }

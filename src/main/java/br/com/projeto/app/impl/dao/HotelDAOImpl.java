@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.entity.Hotel;
@@ -17,26 +17,27 @@ public class HotelDAOImpl extends DAO<Hotel, Connection> {
     }
 
     @Override
-    public List<Hotel> get(HashMap<String, Object> filter) {
+    public List<Hotel> get(List<FilterEntry> filter) {
         return this.get();
     }
 
     @Override
     public List<Hotel> get() {
-        try (Connection conn = this.getContext()) {
+        Connection conn = this.getContext();
+
+        try {
             String sql = "SELECT * FROM hotel LIMIT 1";
             PreparedStatement s = conn.prepareStatement(sql);
 
             ResultSet rs = s.executeQuery();
 
             if (rs.next()) {
-                return List.of(
-                        Hotel
-                                .builder()
-                                .hotelId(rs.getInt("hotel_id"))
-                                .nome(rs.getString("nome"))
-                                .endereco(rs.getString("endereco"))
-                                .build());
+                return List.of(Hotel
+                        .builder()
+                        .hotelId(rs.getInt("hotel_id"))
+                        .nome(rs.getString("nome"))
+                        .endereco(rs.getString("endereco"))
+                        .build());
             }
         } catch (SQLException e) {
             e.printStackTrace();

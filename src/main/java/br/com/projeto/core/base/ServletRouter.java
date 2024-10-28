@@ -97,9 +97,11 @@ public class ServletRouter extends HttpServlet {
         try {
             handler.handleRequest(req, resp);
         } catch (Exception e) {
+            e.printStackTrace();
+
             try {
                 resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                Utils.sendJsonResponse("{ error: \"Ocorreu um erro inesperado ao processar a requisição\" }", resp);
+                Utils.sendJsonResponse("{ \"error\": \"Ocorreu um erro inesperado ao processar a requisição\" }", resp);
             } catch (Exception responseError) {
                 System.out.println("Erro ao fornecer resposta de erro: ");
                 responseError.printStackTrace();

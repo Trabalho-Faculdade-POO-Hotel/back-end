@@ -11,9 +11,13 @@ import br.com.projeto.core.entity.Reserva;
 
 public class HotelService<E> implements Reservavel<Reserva, E> {
     Class<? extends DAO<Hotel, E>> hotelDAOClass;
+    Class<? extends DAO<Quarto, E>> quartoDAOClass;
 
-    public HotelService(Class<? extends DAO<Hotel, E>> hotelDAOClass) {
+    public HotelService(
+            Class<? extends DAO<Hotel, E>> hotelDAOClass,
+            Class<? extends DAO<Quarto, E>> quartoDAOClass) {
         this.hotelDAOClass = hotelDAOClass;
+        this.quartoDAOClass = quartoDAOClass;
     }
 
     public Hotel obterHotel(E context) {
@@ -23,7 +27,7 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
     };
 
     public void adicionarQuarto(E context, Quarto quarto) {
-        throw new UnsupportedOperationException("Unimplemented method");
+
     };
 
     public void adicionarCliente(E context, Cliente cliente) {
