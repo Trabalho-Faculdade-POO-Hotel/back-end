@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.entity.Hotel;
@@ -17,18 +16,16 @@ public class HotelDAOImpl extends DAO<Hotel, Connection> {
     }
 
     @Override
-    public List<Hotel> get(List<FilterEntry> filter) {
+    public List<Hotel> get(List<FilterEntry> filter) throws SQLException {
         return this.get();
     }
 
     @Override
-    public List<Hotel> get() {
+    public List<Hotel> get() throws SQLException {
         Connection conn = this.getContext();
 
-        try {
-            String sql = "SELECT * FROM hotel LIMIT 1";
-            PreparedStatement s = conn.prepareStatement(sql);
-
+        String sql = "SELECT * FROM hotel LIMIT 1";
+        try (PreparedStatement s = conn.prepareStatement(sql)) {
             ResultSet rs = s.executeQuery();
 
             if (rs.next()) {
@@ -40,28 +37,60 @@ public class HotelDAOImpl extends DAO<Hotel, Connection> {
                         .build());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw e;
         }
 
-        return null;
+        return List.of();
     }
 
     @Override
-    public Hotel create(Hotel entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
+    public Hotel create(Hotel entity) throws SQLException {
+        Connection conn = this.getContext();
+
+        String sql = "INSERT INTO hotel(nome, endereco) VALUES (?, ?)";
+        try (PreparedStatement s = conn.prepareStatement(sql)) {
+            s.setString(1, entity.getNome());
+            s.setString(2, entity.getEndereco());
+            s.executeUpdate();
+
+            List<Hotel> hotelList = this.get();
+
+            return hotelList.get(0);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public Hotel update(Hotel updatedEntity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    public Hotel update(Hotel updatedEntity) throws SQLException {
+        Connection conn = this.getContext();
+
+        String sql = "UPDATE hotel SET nome = ?, endereco = ? WHERE hotel_id = ?";
+        try (PreparedStatement s = conn.prepareStatement(sql)) {
+            s.setString(1, updatedEntity.getNome());
+            s.setString(2, updatedEntity.getEndereco());
+            s.setInt(3, updatedEntity.getHotelId());
+            s.executeUpdate();
+
+            List<Hotel> hotelList = this.get();
+
+            return hotelList.get(0);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public void delete(Hotel entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public void delete(Hotel entity) throws SQLException {
+        Connection conn = this.getContext();
+
+        String sql = "DELETE FROM hotel WHERE hotel_id = ?";
+        try (PreparedStatement s = conn.prepareStatement(sql)) {
+            s.setInt(1, entity.getHotelId());
+            s.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
 }

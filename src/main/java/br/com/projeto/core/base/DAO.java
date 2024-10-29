@@ -1,7 +1,6 @@
 package br.com.projeto.core.base;
 
 import java.util.List;
-import java.util.Map;
 
 public abstract class DAO<T, E> {
     private E context;
@@ -73,13 +72,13 @@ public abstract class DAO<T, E> {
         return this.context;
     }
 
-    public abstract List<T> get(List<FilterEntry> filter);
+    public abstract List<T> get(List<FilterEntry> filter) throws Exception;
 
-    public abstract List<T> get();
+    public abstract List<T> get() throws Exception;
 
-    public abstract T create(T entity);
+    public abstract T create(T entity) throws Exception;
 
-    public abstract T update(T updatedEntity);
+    public abstract T update(T updatedEntity) throws Exception;
 
-    public abstract void delete(T entity);
+    public abstract void delete(T entity) throws Exception;
 }

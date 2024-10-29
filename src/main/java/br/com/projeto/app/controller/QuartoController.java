@@ -3,7 +3,6 @@ package br.com.projeto.app.controller;
 import java.sql.Connection;
 import java.util.List;
 
-import br.com.projeto.app.impl.dao.QuartoDAOImpl;
 import br.com.projeto.core.base.Controller;
 import br.com.projeto.core.base.HttpMethod;
 import br.com.projeto.core.base.ServletRouter.Handler;
@@ -13,9 +12,11 @@ import br.com.projeto.utils.DBConnectionPool;
 import br.com.projeto.utils.Utils;
 
 public class QuartoController extends Controller {
-    QuartoService<Connection> quartoService = new QuartoService<>(QuartoDAOImpl.class);
+    QuartoService<Connection> quartoService;
 
-    public QuartoController() {
+    public QuartoController(QuartoService<Connection> quartoService) {
+        this.quartoService = quartoService;
+
         this.registerRoute(HttpMethod.GET, "/quarto/list", this.listQuartos);
     }
 

@@ -11,21 +11,20 @@ import java.util.Objects;
 
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
-import br.com.projeto.core.entity.Quarto;
-import br.com.projeto.core.entity.Quarto.TipoQuarto;
+import br.com.projeto.core.entity.HistoricoReserva;
 
-public class QuartoDAOImpl extends DAO<Quarto, Connection> {
+public class HistoricoReservaDAOImpl extends DAO<HistoricoReserva, Connection> {
 
-    public QuartoDAOImpl(Connection conn) {
-        super(conn);
+    public HistoricoReservaDAOImpl(Connection context) {
+        super(context);
     }
 
     @Override
-    public List<Quarto> get(List<FilterEntry> filter) {
+    public List<HistoricoReserva> get(List<FilterEntry> filter) throws Exception {
         Connection conn = this.getContext();
 
         StringBuilder sqlBuilder = new StringBuilder();
-        sqlBuilder.append("SELECT * FROM quarto");
+        sqlBuilder.append("SELECT * FROM historico_reserva");
 
         if (Objects.nonNull(filter)) {
             sqlBuilder.append(" WHERE ");
@@ -50,20 +49,17 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
 
             ResultSet result = statement.executeQuery();
 
-            List<Quarto> quartoList = new ArrayList<>();
+            List<HistoricoReserva> historicoReservaList = new ArrayList<>();
             while (result.next()) {
-                quartoList.add(Quarto
+                historicoReservaList.add(
+                    HistoricoReserva
                         .builder()
-                        .quartoId(result.getInt("quarto_id"))
-                        .numero(result.getInt("numero"))
-                        .tipo(TipoQuarto.fromString(result.getString("tipo")))
-                        .lotacao(result.getInt("lotacao"))
-                        .preco(result.getDouble("preco"))
-                        .emManutencao(result.getBoolean("em_manutencao"))
-                        .hotelId((Integer) result.getObject("hotel_id")).build());
+                        .clienteId(result.getInt("cliente_id"))
+                        .reservaId(result.getInt("reserva_id"))
+                        .build());
             }
 
-            return quartoList;
+            return historicoReservaList;
         } catch (SQLException e) {
             e.printStackTrace();
 
@@ -72,22 +68,18 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
     }
 
     @Override
-    public List<Quarto> get() {
+    public List<HistoricoReserva> get() throws Exception {
         return this.get(null);
     }
 
     @Override
-    public Quarto create(Quarto entity) throws SQLException {
+    public HistoricoReserva create(HistoricoReserva entity) throws Exception {
         Connection conn = this.getContext();
 
-        String sql = "INSERT INTO quarto(numero, tipo, lotacao, preco, em_manutencao, hotel_id) VALUES (?, ?::tipo_quarto_enum, ?, ?, ?, ?)";
+        String sql = "INSERT INTO historico_reserva(cliente_id, reserva_id) VALUES (?, ?)";
         try (PreparedStatement s = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            s.setObject(1, entity.getNumero());
-            s.setObject(2, entity.getTipo().toString());
-            s.setObject(3, entity.getLotacao());
-            s.setObject(4, entity.getPreco());
-            s.setObject(5, entity.getEmManutencao());
-            s.setObject(6, entity.getHotelId());
+            s.setObject(1, entity.getClienteId());
+            s.setObject(2, entity.getReservaId());
 
             int affectedRows = s.executeUpdate();
 
@@ -96,7 +88,7 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
                 if (generatedKeys.next()) {
                     int insertId = generatedKeys.getInt(1);
 
-                    return this.get(List.of(new FilterEntry("quarto_id", FilterComparator.EQUALS, insertId))).get(0);
+                    return this.get(List.of(new FilterEntry("historico_id", FilterComparator.EQUALS, insertId))).get(0);
                 }
             }
         } catch (SQLException e) {
@@ -107,25 +99,21 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
     }
 
     @Override
-    public Quarto update(Quarto updatedEntity) throws SQLException {
+    public HistoricoReserva update(HistoricoReserva updatedEntity) throws Exception {
         Connection conn = this.getContext();
 
-        String sql = "UPDATE quarto SET numero = ?, tipo = ?::tipo_quarto_enum, lotacao = ?, preco = ?, em_manutencao = ?, hotel_id = ? WHERE quarto_id = ?";
+        String sql = "UPDATE historico_reserva SET cliente_id = ?, reserva_id = ? WHERE historico_id = ?";
         try (PreparedStatement s = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            s.setObject(1, updatedEntity.getNumero());
-            s.setObject(2, updatedEntity.getTipo().toString());
-            s.setObject(3, updatedEntity.getLotacao());
-            s.setObject(4, updatedEntity.getPreco());
-            s.setObject(5, updatedEntity.getEmManutencao());
-            s.setObject(6, updatedEntity.getHotelId());
-            s.setObject(7, updatedEntity.getQuartoId());
+            s.setObject(1, updatedEntity.getClienteId());
+            s.setObject(2, updatedEntity.getReservaId());
+            s.setObject(3, updatedEntity.getHistoricoId());
 
             int affectedRows = s.executeUpdate();
 
             if (affectedRows > 0) {
                 return this
                         .get(List
-                                .of(new FilterEntry("quarto_id", FilterComparator.EQUALS, updatedEntity.getQuartoId())))
+                                .of(new FilterEntry("cliente_id", FilterComparator.EQUALS, updatedEntity.getClienteId())))
                         .get(0);
             }
         } catch (SQLException e) {
@@ -136,12 +124,13 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
     }
 
     @Override
-    public void delete(Quarto entity) throws SQLException {
+    public void delete(HistoricoReserva entity) throws Exception {
         Connection conn = this.getContext();
 
-        String sql = "DELETE FROM quarto WHERE quarto_id = ?";
+        String sql = "DELETE FROM historico_reserva WHERE historico_id = ?";
         try (PreparedStatement s = conn.prepareStatement(sql)) {
-            s.setInt(1, entity.getQuartoId());
+            s.setObject(1, entity.getHistoricoId());
+
             s.executeUpdate();
         } catch (SQLException e) {
             throw e;

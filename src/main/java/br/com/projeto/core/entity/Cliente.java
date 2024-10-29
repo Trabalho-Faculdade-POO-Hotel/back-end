@@ -8,11 +8,10 @@ import java.util.Date;
 @Data
 @SuperBuilder(toBuilder = true)
 public class Cliente {
-    private int id;
+    private Integer clienteId;
     private String nome;
-    private String cpf;
     private String email;
-    private Date dtNascimento;
+    private Date dataNascimento;
     private String telefone;
     private String endereco;
 
