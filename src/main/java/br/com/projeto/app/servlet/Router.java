@@ -13,13 +13,31 @@ import br.com.projeto.core.base.ServletRouter;
 import br.com.projeto.core.service.ClienteService;
 import br.com.projeto.core.service.HotelService;
 import br.com.projeto.core.service.QuartoService;
+import br.com.projeto.core.service.ReservaService;
 
 public class Router extends ServletRouter {
 
     public Router() {
-        ClienteService<Connection> clienteService = new ClienteService<>(ClienteDAOImpl.class);
-        QuartoService<Connection> quartoService = new QuartoService<>(HotelDAOImpl.class, QuartoDAOImpl.class);
-        HotelService<Connection> hotelService = new HotelService<>(quartoService, clienteService, HotelDAOImpl.class, HotelClienteDAOImpl.class, ReservaDaoImpl.class);
+        ReservaService<Connection> reservaService = new ReservaService<>(
+                ReservaDaoImpl.class,
+                QuartoDAOImpl.class);
+
+        ClienteService<Connection> clienteService = new ClienteService<>(
+                reservaService,
+                ClienteDAOImpl.class,
+                ReservaDaoImpl.class);
+
+        QuartoService<Connection> quartoService = new QuartoService<>(
+                HotelDAOImpl.class,
+                QuartoDAOImpl.class);
+
+        HotelService<Connection> hotelService = new HotelService<>(
+                quartoService,
+                clienteService,
+                HotelDAOImpl.class,
+                HotelClienteDAOImpl.class,
+                ReservaDaoImpl.class,
+                ClienteDAOImpl.class);
 
         this.registerController(new HotelController(hotelService));
         this.registerController(new QuartoController(quartoService));

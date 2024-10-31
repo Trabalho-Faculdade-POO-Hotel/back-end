@@ -1,8 +1,12 @@
 package br.com.projeto.utils;
 
+import java.beans.PropertyDescriptor;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -43,6 +47,27 @@ public class Utils {
     public static void setJsonResponseHeaders(HttpServletResponse response) {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+    }
+
+    public static String getJsonFromRequestBody(HttpServletRequest req) {
+        StringBuilder sb = new StringBuilder();
+        String line;
+
+        try {
+            while ((line = req.getReader().readLine()) != null) {
+                sb.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+
+            return null;
+        }
+
+        return sb.toString();
+    }
+
+    public static <T> T getEntityFromJson(String json, Class<? extends T> entityClass) throws IOException {
+        return Utils.mapper.readValue(json, entityClass);
     }
 
 }

@@ -24,12 +24,14 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
             ClienteService<E> clienteService,
             Class<? extends DAO<Hotel, E>> hotelDAOClass,
             Class<? extends DAO<HotelCliente, E>> hotelClienteDAOClass,
-            Class<? extends DAO<Reserva, E>> reservaDAOClass) {
+            Class<? extends DAO<Reserva, E>> reservaDAOClass,
+            Class<? extends DAO<Cliente, E>> clienteDAOClass) {
         this.quartoService = quartoService;
         this.clienteService = clienteService;
         this.hotelDAOClass = hotelDAOClass;
         this.hotelClienteDAOClass = hotelClienteDAOClass;
         this.reservaDAOClass = reservaDAOClass;
+        this.clienteDAOClass = clienteDAOClass;
     }
 
     public Hotel obterHotel(E context) throws Exception {
@@ -65,9 +67,9 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
         }
 
         hotelClienteDAO.create(HotelCliente.builder()
-            .clienteId(clienteInserido.getClienteId())
-            .hotelId(this.obterHotel(context).getHotelId())
-            .build());
+                .clienteId(clienteInserido.getClienteId())
+                .hotelId(this.obterHotel(context).getHotelId())
+                .build());
     };
 
     public void bloquearQuarto(E context, Quarto quarto) {
@@ -78,8 +80,8 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
         DAO<Cliente, E> clienteDAO = DAO.createFromClass(this.clienteDAOClass, context);
 
         return clienteDAO.get(List.of(
-            new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS, this.obterHotel(context).getHotelId())
-        ));
+                new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS,
+                        this.obterHotel(context).getHotelId())));
     };
 
     @Override
@@ -94,7 +96,7 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
         DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
 
         return reservaDAO.get(List.of(
-            new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS, this.obterHotel(context).getHotelId())
-        ));
+                new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS,
+                        this.obterHotel(context).getHotelId())));
     }
 }

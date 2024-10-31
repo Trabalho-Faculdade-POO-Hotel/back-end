@@ -1,12 +1,14 @@
 package br.com.projeto.core.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
 @Data
 @SuperBuilder(toBuilder = true)
+@NoArgsConstructor
 public class Reserva {
     private Integer reservaId;
     private Date dataInicio;
