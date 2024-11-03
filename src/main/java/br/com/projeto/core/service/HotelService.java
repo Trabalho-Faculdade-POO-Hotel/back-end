@@ -3,15 +3,15 @@ package br.com.projeto.core.service;
 import java.util.List;
 import java.util.Objects;
 
+import br.com.projeto.core.base.ClientException;
 import br.com.projeto.core.base.DAO;
-import br.com.projeto.core.base.Reservavel;
 import br.com.projeto.core.entity.Cliente;
 import br.com.projeto.core.entity.Hotel;
 import br.com.projeto.core.entity.HotelCliente;
 import br.com.projeto.core.entity.Quarto;
 import br.com.projeto.core.entity.Reserva;
 
-public class HotelService<E> implements Reservavel<Reserva, E> {
+public class HotelService<E> {
     Class<? extends DAO<Hotel, E>> hotelDAOClass;
     Class<? extends DAO<Cliente, E>> clienteDAOClass;
     Class<? extends DAO<HotelCliente, E>> hotelClienteDAOClass;
@@ -50,7 +50,7 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
         Quarto quartoExistente = this.quartoService.buscarPorNumero(context, quarto.getNumero());
 
         if (Objects.nonNull(quartoExistente)) {
-            throw new Exception("Quarto já existe");
+            throw new ClientException("Quarto já existe", 400);
         }
 
         this.quartoService.adicionar(context, quarto);
@@ -60,10 +60,24 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
         DAO<Cliente, E> clienteDAO = DAO.createFromClass(this.clienteDAOClass, context);
         DAO<HotelCliente, E> hotelClienteDAO = DAO.createFromClass(this.hotelClienteDAOClass, context);
 
+        if (Objects.isNull(cliente.getEmail()) || cliente.getEmail().isEmpty()) {
+            throw new ClientException("Email é obrigatório", 400);
+        }
+
+        Cliente clienteExistente = clienteDAO.get(List.of(
+                new DAO.FilterEntry("email", DAO.FilterEntry.FilterComparator.EQUALS, cliente.getEmail())))
+                .stream()
+                .findFirst()
+                .orElse(null);
+
+        if (Objects.nonNull(clienteExistente)) {
+            throw new ClientException("Cliente existente", 400);
+        }
+
         Cliente clienteInserido = clienteDAO.create(cliente);
 
         if (Objects.isNull(clienteInserido)) {
-            throw new Exception("Erro ao inserir cliente");
+            throw new ClientException("Erro ao inserir cliente", 400);
         }
 
         hotelClienteDAO.create(HotelCliente.builder()
@@ -72,31 +86,83 @@ public class HotelService<E> implements Reservavel<Reserva, E> {
                 .build());
     };
 
-    public void bloquearQuarto(E context, Quarto quarto) {
-        throw new UnsupportedOperationException("Unimplemented method");
+    public void bloquearQuarto(E context, Integer numero) throws Exception {
+        if (Objects.isNull(numero)) {
+            throw new ClientException("HotelId é obrigatório", 400);
+        }
+
+        Quarto quartoExistente = this.quartoService.buscarPorNumero(context, numero);
+
+        if (Objects.isNull(quartoExistente)) {
+            throw new ClientException("Quarto não existe", 400);
+        }
+
+        quartoExistente.setEmManutencao(true);
+
+        this.quartoService.atualizar(context, quartoExistente);
     };
 
     public List<Cliente> listarClientes(E context) throws Exception {
         DAO<Cliente, E> clienteDAO = DAO.createFromClass(this.clienteDAOClass, context);
 
-        return clienteDAO.get(List.of(
-                new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS,
-                        this.obterHotel(context).getHotelId())));
+        return clienteDAO.get();
     };
 
-    @Override
-    public void fazerReserva(E context, Reserva obj) throws Exception {
-        DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
+    public boolean verificarQuarto(E context, Integer numero) throws Exception {
+        Quarto quarto = this.quartoService.buscarPorNumero(context, numero);
 
-        reservaDAO.create(obj);
+        if (Objects.isNull(quarto)) {
+            throw new ClientException("Quarto não existe", 400);
+        }
+
+        if (quarto.getEmManutencao()) {
+            return false;
+        }
+
+        DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
+        List<Reserva> reservas = reservaDAO.get(List.of(
+                new DAO.FilterEntry("quarto_id", DAO.FilterEntry.FilterComparator.EQUALS, quarto.getQuartoId()),
+                new DAO.FilterEntry("status",
+                        List.of(Reserva.Status.ATIVO.toString(),
+                                Reserva.Status.CHECK_IN.toString()),
+                        "status_enum")));
+
+        return reservas.isEmpty();
     }
 
-    @Override
-    public List<Reserva> verificarReservas(E context) throws Exception {
+    public void fazerReserva(E context, Reserva reserva) throws Exception {
         DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
 
-        return reservaDAO.get(List.of(
-                new DAO.FilterEntry("hotel_id", DAO.FilterEntry.FilterComparator.EQUALS,
-                        this.obterHotel(context).getHotelId())));
+        Integer clienteId = reserva.getClienteId();
+
+        if (Objects.isNull(clienteId)) {
+            throw new ClientException("Cliente não informado", 400);
+        }
+
+        List<Reserva> reservasCliente = this.clienteService.verificarReservas(context, clienteId);
+
+        if (reservasCliente.stream().anyMatch(r -> r.getStatus().equals(Reserva.Status.ATIVO))) {
+            throw new ClientException("Cliente já possui reserva ativa", 400);
+        }
+
+        reservaDAO.create(reserva);
     }
+
+    public List<Quarto> verificarReservas(E context) throws Exception {
+        DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
+
+        List<Reserva> reservasAtivas = reservaDAO.get(List.of(
+                new DAO.FilterEntry(
+                        "status",
+                        List.of(Reserva.Status.ATIVO.toString(), Reserva.Status.CHECK_IN.toString()),
+                        "status_enum")));
+
+        List<Quarto> quartos = this.quartoService.listarTodos(context);
+        List<Quarto> quartosDisponiveis = quartos.stream()
+                .filter(q -> reservasAtivas.stream().noneMatch(r -> r.getQuartoId() == q.getQuartoId()))
+                .toList();
+
+        return quartosDisponiveis;
+    }
+
 }

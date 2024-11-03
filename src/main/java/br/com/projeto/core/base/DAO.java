@@ -1,6 +1,7 @@
 package br.com.projeto.core.base;
 
 import java.util.List;
+import java.util.Objects;
 
 public abstract class DAO<T, E> {
     private E context;
@@ -20,6 +21,8 @@ public abstract class DAO<T, E> {
         private String key;
         private FilterComparator comparator;
         private Object value;
+        private List<Object> values;
+        private String type;
 
         public enum FilterComparator {
             EQUALS("="),
@@ -28,6 +31,7 @@ public abstract class DAO<T, E> {
             LESS_THAN("<"),
             GREATER_EQUAL_THAN(">="),
             LESS_EQUAL_THAN("<="),
+            IN("IN"),
             LIKE("LIKE");
 
             private String filterValue;
@@ -46,6 +50,27 @@ public abstract class DAO<T, E> {
             this.key = key;
             this.comparator = comparator;
             this.value = value;
+            this.values = null;
+            this.type = null;
+        }
+
+        public FilterEntry(String key, List<Object> values) {
+            this(key, FilterComparator.IN, null);
+            this.values = values;
+        }
+
+        public FilterEntry(String key, FilterComparator comparator, Object value, String type) {
+            this(key, comparator, value);
+            this.type = type;
+        }
+
+        public FilterEntry(String key, List<Object> values, String type) {
+            this(key, values);
+            this.type = type;
+        }
+
+        public boolean isSingleValue() {
+            return this.values == null;
         }
 
         public String getKey() {
@@ -56,9 +81,25 @@ public abstract class DAO<T, E> {
             return this.value;
         }
 
+        public List<Object> getValues() {
+            return this.values;
+        }
+
         public String buildQuery() {
+            if (this.comparator == FilterComparator.IN) {
+                return String.format(
+                        "%s IN (" + String.join(",",
+                                List.of(
+                                        "?".repeat(this.values.size())
+                                                .split(""))
+                                        .stream()
+                                        .map(s -> s + (Objects.nonNull(this.type) ? "::" + this.type : "")).toList())
+                                + ")",
+                        this.key);
+            }
+
             return String.format(
-                    "%s %s ?",
+                    "%s %s ?" + (Objects.nonNull(this.type) ? "::" + this.type : ""),
                     this.key,
                     this.comparator.toString());
         }

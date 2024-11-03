@@ -11,6 +11,7 @@ import java.util.Objects;
 
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.entity.HotelCliente;
+import br.com.projeto.utils.SQLHelper;
 
 public class HotelClienteDAOImpl extends DAO<HotelCliente, Connection> {
 
@@ -26,24 +27,14 @@ public class HotelClienteDAOImpl extends DAO<HotelCliente, Connection> {
         sqlBuilder.append("SELECT * FROM hotel_cliente");
 
         if (Objects.nonNull(filter)) {
-            sqlBuilder.append(" WHERE ");
-
-            String whereQuery = String.join(
-                    " AND ",
-                    filter.stream().map(f -> f.buildQuery()).toList());
+            String whereQuery = SQLHelper.buildWhereQuery(filter);
 
             sqlBuilder.append(whereQuery);
         }
 
         try (PreparedStatement statement = conn.prepareStatement(sqlBuilder.toString())) {
             if (Objects.nonNull(filter)) {
-                int index = 1;
-
-                for (Object value : filter.stream().map(f -> f.getValue()).toList()) {
-                    statement.setObject(index, value);
-
-                    index++;
-                }
+                SQLHelper.applyValuesToStatement(filter, statement);
             }
 
             ResultSet result = statement.executeQuery();
@@ -51,11 +42,11 @@ public class HotelClienteDAOImpl extends DAO<HotelCliente, Connection> {
             List<HotelCliente> hotelClienteList = new ArrayList<>();
             while (result.next()) {
                 hotelClienteList.add(
-                    HotelCliente
-                        .builder()
-                        .hotelId(result.getInt("hotel_id"))
-                        .clienteId(result.getInt("cliente_id"))
-                        .build());
+                        HotelCliente
+                                .builder()
+                                .hotelId(result.getInt("hotel_id"))
+                                .clienteId(result.getInt("cliente_id"))
+                                .build());
             }
 
             return hotelClienteList;
@@ -111,5 +102,5 @@ public class HotelClienteDAOImpl extends DAO<HotelCliente, Connection> {
             throw e;
         }
     }
-    
+
 }

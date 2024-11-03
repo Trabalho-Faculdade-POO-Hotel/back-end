@@ -1,13 +1,14 @@
 package br.com.projeto.core.service;
 
 import java.util.List;
+import java.util.Objects;
 
+import br.com.projeto.core.base.ClientException;
 import br.com.projeto.core.base.DAO;
-import br.com.projeto.core.base.Reservavel;
 import br.com.projeto.core.entity.Cliente;
 import br.com.projeto.core.entity.Reserva;
 
-public class ClienteService<E> implements Reservavel<Reserva, E> {
+public class ClienteService<E> {
     private ReservaService<E> reservaService;
     private Class<? extends DAO<Cliente, E>> clienteDAOClass;
     private Class<? extends DAO<Reserva, E>> reservaDAOClass;
@@ -21,7 +22,7 @@ public class ClienteService<E> implements Reservavel<Reserva, E> {
         this.reservaDAOClass = reservaDAOClass;
     }
 
-    Cliente obterCliente(E context, Cliente cliente) throws Exception {
+    public Cliente obterCliente(E context, Cliente cliente) throws Exception {
         DAO<Cliente, E> clienteDAO = DAO.createFromClass(this.clienteDAOClass, context);
 
         List<Cliente> clientes = clienteDAO.get(List.of(
@@ -41,7 +42,7 @@ public class ClienteService<E> implements Reservavel<Reserva, E> {
                 Reserva.Status.CANCELADO);
     };
 
-    void atualizarDadosCadastro(E context, Cliente cliente) throws Exception {
+    public void atualizarDadosCadastro(E context, Cliente cliente) throws Exception {
         DAO<Cliente, E> clienteDAO = DAO.createFromClass(this.clienteDAOClass, context);
 
         List<Cliente> clientes = clienteDAO.get(List.of(
@@ -54,18 +55,35 @@ public class ClienteService<E> implements Reservavel<Reserva, E> {
         clienteDAO.update(cliente);
     }
 
-    @Override
+    public List<Reserva> historicoReservas(E context, Integer clienteId) throws Exception {
+        DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
+
+        if (Objects.isNull(clienteId)) {
+            throw new ClientException("Cliente não informado", 400);
+        }
+
+        return reservaDAO.get(List.of(
+                new DAO.FilterEntry("cliente_id", DAO.FilterEntry.FilterComparator.EQUALS, clienteId)));
+    }
+
     public void fazerReserva(E context, Reserva reserva) throws Exception {
         DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
 
         reservaDAO.create(reserva);
     }
 
-    @Override
-    public List<Reserva> verificarReservas(E context) throws Exception {
+    public void cancelarReserva(E context, Integer reservaId) throws Exception {
+        this.reservaService.alterarStatus(context, reservaId, Reserva.Status.CANCELADO);
+    }
+
+    public List<Reserva> verificarReservas(E context, Integer clienteId) throws Exception {
         DAO<Reserva, E> reservaDAO = DAO.createFromClass(this.reservaDAOClass, context);
 
+        if (Objects.isNull(clienteId)) {
+            throw new ClientException("Cliente não informado", 400);
+        }
+
         return reservaDAO.get(List.of(
-                new DAO.FilterEntry("cliente_id", DAO.FilterEntry.FilterComparator.EQUALS, context)));
-    };
+                new DAO.FilterEntry("cliente_id", DAO.FilterEntry.FilterComparator.EQUALS, clienteId)));
+    }
 }

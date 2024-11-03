@@ -12,6 +12,7 @@ import java.util.Objects;
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
 import br.com.projeto.core.entity.HistoricoReserva;
+import br.com.projeto.utils.SQLHelper;
 
 public class HistoricoReservaDAOImpl extends DAO<HistoricoReserva, Connection> {
 
@@ -27,24 +28,14 @@ public class HistoricoReservaDAOImpl extends DAO<HistoricoReserva, Connection> {
         sqlBuilder.append("SELECT * FROM historico_reserva");
 
         if (Objects.nonNull(filter)) {
-            sqlBuilder.append(" WHERE ");
-
-            String whereQuery = String.join(
-                    " AND ",
-                    filter.stream().map(f -> f.buildQuery()).toList());
+            String whereQuery = SQLHelper.buildWhereQuery(filter);
 
             sqlBuilder.append(whereQuery);
         }
 
         try (PreparedStatement statement = conn.prepareStatement(sqlBuilder.toString())) {
             if (Objects.nonNull(filter)) {
-                int index = 1;
-
-                for (Object value : filter.stream().map(f -> f.getValue()).toList()) {
-                    statement.setObject(index, value);
-
-                    index++;
-                }
+                SQLHelper.applyValuesToStatement(filter, statement);
             }
 
             ResultSet result = statement.executeQuery();
@@ -52,11 +43,11 @@ public class HistoricoReservaDAOImpl extends DAO<HistoricoReserva, Connection> {
             List<HistoricoReserva> historicoReservaList = new ArrayList<>();
             while (result.next()) {
                 historicoReservaList.add(
-                    HistoricoReserva
-                        .builder()
-                        .clienteId(result.getInt("cliente_id"))
-                        .reservaId(result.getInt("reserva_id"))
-                        .build());
+                        HistoricoReserva
+                                .builder()
+                                .clienteId(result.getInt("cliente_id"))
+                                .reservaId(result.getInt("reserva_id"))
+                                .build());
             }
 
             return historicoReservaList;
@@ -113,7 +104,8 @@ public class HistoricoReservaDAOImpl extends DAO<HistoricoReserva, Connection> {
             if (affectedRows > 0) {
                 return this
                         .get(List
-                                .of(new FilterEntry("cliente_id", FilterComparator.EQUALS, updatedEntity.getClienteId())))
+                                .of(new FilterEntry("cliente_id", FilterComparator.EQUALS,
+                                        updatedEntity.getClienteId())))
                         .get(0);
             }
         } catch (SQLException e) {

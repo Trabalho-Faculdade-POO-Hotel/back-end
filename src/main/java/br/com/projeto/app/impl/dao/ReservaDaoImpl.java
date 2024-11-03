@@ -14,6 +14,7 @@ import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
 import br.com.projeto.core.entity.Reserva;
 import br.com.projeto.core.entity.Reserva.Status;
+import br.com.projeto.utils.SQLHelper;
 
 public class ReservaDaoImpl extends DAO<Reserva, Connection> {
 
@@ -29,24 +30,14 @@ public class ReservaDaoImpl extends DAO<Reserva, Connection> {
         sqlBuilder.append("SELECT * FROM reserva");
 
         if (Objects.nonNull(filter)) {
-            sqlBuilder.append(" WHERE ");
-
-            String whereQuery = String.join(
-                    " AND ",
-                    filter.stream().map(f -> f.buildQuery()).toList());
+            String whereQuery = SQLHelper.buildWhereQuery(filter);
 
             sqlBuilder.append(whereQuery);
         }
 
         try (PreparedStatement statement = conn.prepareStatement(sqlBuilder.toString())) {
             if (Objects.nonNull(filter)) {
-                int index = 1;
-
-                for (Object value : filter.stream().map(f -> f.getValue()).toList()) {
-                    statement.setObject(index, value);
-
-                    index++;
-                }
+                SQLHelper.applyValuesToStatement(filter, statement);
             }
 
             ResultSet result = statement.executeQuery();
@@ -66,7 +57,9 @@ public class ReservaDaoImpl extends DAO<Reserva, Connection> {
 
             return reservaList;
         } catch (SQLException e) {
-            throw e;
+            e.printStackTrace();
+
+            return List.of();
         }
     }
 
@@ -120,7 +113,10 @@ public class ReservaDaoImpl extends DAO<Reserva, Connection> {
             int affectedRows = s.executeUpdate();
 
             if (affectedRows > 0) {
-                return this.get(List.of(new FilterEntry("reserva_id", FilterComparator.EQUALS, updatedEntity.getReservaId()))).get(0);
+                return this
+                        .get(List.of(
+                                new FilterEntry("reserva_id", FilterComparator.EQUALS, updatedEntity.getReservaId())))
+                        .get(0);
             }
         } catch (SQLException e) {
             e.printStackTrace();

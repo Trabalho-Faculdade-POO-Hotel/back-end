@@ -1,9 +1,6 @@
 package br.com.projeto.utils;
 
-import java.beans.PropertyDescriptor;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.projeto.core.base.ClientException;
 
 public class Utils {
     private static ObjectMapper mapper = new ObjectMapper();
@@ -31,6 +30,10 @@ public class Utils {
 
     public static String createErrorJsonPayload(String message) {
         return String.format("{ \"error\": \"%s\" }", message);
+    }
+
+    public static String createErrorJsonPayload(ClientException e) {
+        return Utils.createErrorJsonPayload(e.getReason());
     }
 
     public static String convertObjectToJson(Object obj) throws JsonProcessingException {

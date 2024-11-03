@@ -13,6 +13,7 @@ import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
 import br.com.projeto.core.entity.Quarto;
 import br.com.projeto.core.entity.Quarto.TipoQuarto;
+import br.com.projeto.utils.SQLHelper;
 
 public class QuartoDAOImpl extends DAO<Quarto, Connection> {
 
@@ -28,24 +29,14 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
         sqlBuilder.append("SELECT * FROM quarto");
 
         if (Objects.nonNull(filter)) {
-            sqlBuilder.append(" WHERE ");
-
-            String whereQuery = String.join(
-                    " AND ",
-                    filter.stream().map(f -> f.buildQuery()).toList());
+            String whereQuery = SQLHelper.buildWhereQuery(filter);
 
             sqlBuilder.append(whereQuery);
         }
 
         try (PreparedStatement statement = conn.prepareStatement(sqlBuilder.toString())) {
             if (Objects.nonNull(filter)) {
-                int index = 1;
-
-                for (Object value : filter.stream().map(f -> f.getValue()).toList()) {
-                    statement.setObject(index, value);
-
-                    index++;
-                }
+                SQLHelper.applyValuesToStatement(filter, statement);
             }
 
             ResultSet result = statement.executeQuery();
@@ -67,7 +58,7 @@ public class QuartoDAOImpl extends DAO<Quarto, Connection> {
         } catch (SQLException e) {
             e.printStackTrace();
 
-            return null;
+            return List.of();
         }
     }
 

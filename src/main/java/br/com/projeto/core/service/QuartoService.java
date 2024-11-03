@@ -1,7 +1,9 @@
 package br.com.projeto.core.service;
 
 import java.util.List;
+import java.util.Objects;
 
+import br.com.projeto.core.base.ClientException;
 import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
@@ -20,6 +22,10 @@ public class QuartoService<E> {
     public void adicionar(E context, Quarto quarto) throws Exception {
         DAO<Quarto, E> quartoDAO = DAO.createFromClass(this.quartoDAOClass, context);
 
+        if (Objects.isNull(quarto.getNumero())) {
+            throw new ClientException("Número do quarto é obrigatório", 400);
+        }
+
         quartoDAO.create(quarto);
     };
 
@@ -34,10 +40,9 @@ public class QuartoService<E> {
         }
 
         List<Quarto> quartos = quartoDAO.get(
-            List.of(
-                new DAO.FilterEntry("hotel_id", FilterEntry.FilterComparator.EQUALS, hotel.get(0).getHotelId()),
-                new DAO.FilterEntry("numero", FilterComparator.EQUALS, numero)
-            ));
+                List.of(
+                        new DAO.FilterEntry("hotel_id", FilterEntry.FilterComparator.EQUALS, hotel.get(0).getHotelId()),
+                        new DAO.FilterEntry("numero", FilterComparator.EQUALS, numero)));
 
         if (quartos.size() == 0) {
             return null;

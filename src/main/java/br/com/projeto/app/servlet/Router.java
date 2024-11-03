@@ -2,8 +2,10 @@ package br.com.projeto.app.servlet;
 
 import java.sql.Connection;
 
+import br.com.projeto.app.controller.ClienteController;
 import br.com.projeto.app.controller.HotelController;
 import br.com.projeto.app.controller.QuartoController;
+import br.com.projeto.app.controller.ReservaController;
 import br.com.projeto.app.impl.dao.ClienteDAOImpl;
 import br.com.projeto.app.impl.dao.HotelClienteDAOImpl;
 import br.com.projeto.app.impl.dao.HotelDAOImpl;
@@ -41,6 +43,8 @@ public class Router extends ServletRouter {
 
         this.registerController(new HotelController(hotelService));
         this.registerController(new QuartoController(quartoService));
+        this.registerController(new ClienteController(clienteService, hotelService));
+        this.registerController(new ReservaController(reservaService));
     }
 
 }
