@@ -12,6 +12,11 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>br.com.projeto.core.filter.CorsFilter</filter-class>
+    </filter>
     
     <servlet>
         <servlet-name>Router</servlet-name>
