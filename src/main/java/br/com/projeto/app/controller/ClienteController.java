@@ -127,9 +127,10 @@ public class ClienteController extends Controller {
     };
 
     private Handler retornarHistoricoCliente = (req, res) -> {
-        Cliente payload;
+        Integer clienteId;
 
         try {
+            clienteId = Integer.parseInt(req.getParameter("clienteId"));
             payload = Utils.getEntityFromJson(Utils.getJsonFromRequestBody(req), Cliente.class);
         } catch (Exception e) {
             res.setStatus(400);
@@ -137,8 +138,6 @@ public class ClienteController extends Controller {
 
             return;
         }
-
-        Integer clienteId = payload.getClienteId();
 
         if (Objects.isNull(clienteId)) {
             res.setStatus(400);
