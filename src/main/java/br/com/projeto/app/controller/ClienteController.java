@@ -131,7 +131,6 @@ public class ClienteController extends Controller {
 
         try {
             clienteId = Integer.parseInt(req.getParameter("clienteId"));
-            payload = Utils.getEntityFromJson(Utils.getJsonFromRequestBody(req), Cliente.class);
         } catch (Exception e) {
             res.setStatus(400);
             Utils.sendJsonResponse(Utils.createErrorJsonPayload("Dados inválidos"), res);
