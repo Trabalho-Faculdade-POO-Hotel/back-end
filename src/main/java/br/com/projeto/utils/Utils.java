@@ -1,7 +1,11 @@
 package br.com.projeto.utils;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
+import java.util.TimeZone;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -70,6 +74,20 @@ public class Utils {
 
     public static <T> T getEntityFromJson(String json, Class<? extends T> entityClass) throws IOException {
         return Utils.mapper.readValue(json, entityClass);
+    }
+
+    public static String convertDateToISOString(Date date, boolean withTime) {
+        if (date == null) {
+            return null;
+        }
+
+        TimeZone tz = TimeZone.getTimeZone("UTC");
+
+        String dateFormaString = withTime ? "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" : "yyyy-MM-dd";
+        DateFormat df = new SimpleDateFormat(dateFormaString);
+        df.setTimeZone(tz);
+
+        return df.format(date);
     }
 
 }

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,6 +13,7 @@ import br.com.projeto.core.base.DAO;
 import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
 import br.com.projeto.core.entity.Cliente;
 import br.com.projeto.utils.SQLHelper;
+import br.com.projeto.utils.Utils;
 
 public class ClienteDAOImpl extends DAO<Cliente, Connection> {
 
@@ -69,11 +69,11 @@ public class ClienteDAOImpl extends DAO<Cliente, Connection> {
     public Cliente create(Cliente entity) throws SQLException {
         Connection conn = this.getContext();
 
-        String sql = "INSERT INTO cliente(nome, email, data_nascimento, telefone, endereco) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cliente(nome, email, data_nascimento, telefone, endereco) VALUES (?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?)";
         try (PreparedStatement s = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             s.setObject(1, entity.getNome());
             s.setObject(2, entity.getEmail());
-            s.setObject(3, entity.getDataNascimento());
+            s.setObject(3, Utils.convertDateToISOString(entity.getDataNascimento(), false));
             s.setObject(4, entity.getTelefone());
             s.setObject(5, entity.getEndereco());
 
@@ -98,11 +98,11 @@ public class ClienteDAOImpl extends DAO<Cliente, Connection> {
     public Cliente update(Cliente updatedEntity) {
         Connection conn = getContext();
 
-        String sql = "UPDATE cliente SET nome = ?, email = ?, data_nascimento = ?, telefone = ?, endereco = ? WHERE cliente_id = ?";
+        String sql = "UPDATE cliente SET nome = ?, email = ?, data_nascimento = TO_DATE(?, 'YYYY-MM-DD'), telefone = ?, endereco = ? WHERE cliente_id = ?";
         try (PreparedStatement s = conn.prepareStatement(sql)) {
             s.setObject(1, updatedEntity.getNome());
             s.setObject(2, updatedEntity.getEmail());
-            s.setObject(3, updatedEntity.getDataNascimento());
+            s.setObject(3, Utils.convertDateToISOString(updatedEntity.getDataNascimento(), false));
             s.setObject(4, updatedEntity.getTelefone());
             s.setObject(5, updatedEntity.getEndereco());
             s.setObject(6, updatedEntity.getClienteId());

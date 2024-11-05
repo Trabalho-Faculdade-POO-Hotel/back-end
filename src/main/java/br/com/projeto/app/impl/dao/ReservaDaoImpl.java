@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +14,7 @@ import br.com.projeto.core.base.DAO.FilterEntry.FilterComparator;
 import br.com.projeto.core.entity.Reserva;
 import br.com.projeto.core.entity.Reserva.Status;
 import br.com.projeto.utils.SQLHelper;
+import br.com.projeto.utils.Utils;
 
 public class ReservaDaoImpl extends DAO<Reserva, Connection> {
 
@@ -72,12 +72,12 @@ public class ReservaDaoImpl extends DAO<Reserva, Connection> {
     public Reserva create(Reserva entity) throws SQLException {
         Connection conn = this.getContext();
 
-        String sql = "INSERT INTO reserva(cliente_id, quarto_id, data_inicio, data_final, status) VALUES (?, ?, ?, ?, ?::status_enum)";
+        String sql = "INSERT INTO reserva(cliente_id, quarto_id, data_inicio, data_final, status) VALUES (?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?::status_enum)";
         try (PreparedStatement s = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             s.setObject(1, entity.getClienteId());
             s.setObject(2, entity.getQuartoId());
-            s.setObject(3, entity.getDataInicio());
-            s.setObject(4, entity.getDataFinal());
+            s.setObject(3, Utils.convertDateToISOString(entity.getDataInicio(), false));
+            s.setObject(4, Utils.convertDateToISOString(entity.getDataFinal(), false));
             s.setObject(5, entity.getStatus().toString());
 
             int affectedRows = s.executeUpdate();
@@ -101,14 +101,12 @@ public class ReservaDaoImpl extends DAO<Reserva, Connection> {
     public Reserva update(Reserva updatedEntity) {
         Connection conn = getContext();
 
-        // toInstant is triggering a UnsupportedOperationException
-
-        String sql = "UPDATE reserva SET cliente_id = ?, quarto_id = ?, data_inicio = ?, data_final = ?, status = ?::status_enum WHERE reserva_id = ?";
+        String sql = "UPDATE reserva SET cliente_id = ?, quarto_id = ?, data_inicio = TO_DATE(?, 'YYYY-MM-DD'), data_final = TO_DATE(?, 'YYYY-MM-DD'), status = ?::status_enum WHERE reserva_id = ?";
         try (PreparedStatement s = conn.prepareStatement(sql)) {
             s.setObject(1, updatedEntity.getClienteId());
             s.setObject(2, updatedEntity.getQuartoId());
-            s.setObject(3, updatedEntity.getDataInicio());
-            s.setObject(4, updatedEntity.getDataFinal());
+            s.setObject(3, Utils.convertDateToISOString(updatedEntity.getDataInicio(), false));
+            s.setObject(4, Utils.convertDateToISOString(updatedEntity.getDataFinal(), false));
             s.setObject(5, updatedEntity.getStatus().toString());
             s.setObject(6, updatedEntity.getReservaId());
 
