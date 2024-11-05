@@ -44,7 +44,6 @@ public class Utils {
         Utils.setJsonResponseHeaders(response);
 
         response.getWriter().write(json);
-        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     public static void setJsonResponseHeaders(HttpServletResponse response) {
