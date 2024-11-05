@@ -19,10 +19,20 @@ public class QuartoController extends Controller {
     public QuartoController(QuartoService<Connection> quartoService) {
         this.quartoService = quartoService;
 
+        this.registerRoute(HttpMethod.GET, "/quarto/listar", this.listarQuartos);
         this.registerRoute(HttpMethod.PUT, "/quarto/atualizar/preco", this.atualizarPreco);
         this.registerRoute(HttpMethod.PUT, "/quarto/atualizar/tipo", this.atualizarTipo);
         this.registerRoute(HttpMethod.PUT, "/quarto/atualizar/manutencao", this.atualizarManutencao);
     }
+
+    private Handler listarQuartos = (req, res) -> {
+        try (Connection conn = DBConnectionPool.getDataSource().getConnection()) {
+            Utils.sendJsonResponse(Utils.convertObjectToJson(this.quartoService.listarTodos(conn)), res);
+        } catch (Exception e) {
+            res.setStatus(500);
+            Utils.sendJsonResponse(Utils.createErrorJsonPayload("Erro ao listar quartos"), res);
+        }
+    };
 
     private Handler atualizarManutencao = (req, res) -> {
         Quarto quarto = null;
