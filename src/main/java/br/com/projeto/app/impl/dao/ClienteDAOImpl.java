@@ -73,7 +73,7 @@ public class ClienteDAOImpl extends DAO<Cliente, Connection> {
         try (PreparedStatement s = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             s.setObject(1, entity.getNome());
             s.setObject(2, entity.getEmail());
-            s.setObject(3, entity.getDataNascimento().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            s.setObject(3, entity.getDataNascimento());
             s.setObject(4, entity.getTelefone());
             s.setObject(5, entity.getEndereco());
 
@@ -102,7 +102,7 @@ public class ClienteDAOImpl extends DAO<Cliente, Connection> {
         try (PreparedStatement s = conn.prepareStatement(sql)) {
             s.setObject(1, updatedEntity.getNome());
             s.setObject(2, updatedEntity.getEmail());
-            s.setObject(3, updatedEntity.getDataNascimento().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            s.setObject(3, updatedEntity.getDataNascimento());
             s.setObject(4, updatedEntity.getTelefone());
             s.setObject(5, updatedEntity.getEndereco());
             s.setObject(6, updatedEntity.getClienteId());
